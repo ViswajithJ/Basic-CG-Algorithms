@@ -8,7 +8,6 @@ DDA LINE DRAWING ALGORITHM IMPLEMENTATION
 #include <GL/glut.h>
 #include <GL/glu.h>
 #include <math.h>
-#include <unistd.h>
 
 void dda() 
 {

@@ -7,8 +7,6 @@ BRSENHAM'S CIRCLE DRAWING ALGORITHM IMPLEMENTATION
 #include <stdio.h>
 #include <GL/glut.h>
 #include <GL/glu.h>
-#include <math.h>
-#include <unistd.h>
 
 void bresenham_circle() 
 {
