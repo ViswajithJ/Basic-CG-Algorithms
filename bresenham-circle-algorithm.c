@@ -2,10 +2,6 @@
 
 BRSENHAM'S CIRCLE DRAWING ALGORITHM IMPLEMENTATION
 
-Viswajith J.
-Roll no. 60
-S6 CSE
-
 */
 
 #include <stdio.h>
@@ -30,13 +26,14 @@ void bresenham_circle()
 	scanf("%d", &radius);
 
 	x = 0;
+
 	y = radius;
-	p = 3-2*radius;
+
+	p = 3-2*radius;  //decision parameter (initial value)
 
 	while(x<y)
 	{	
 
-		
 		printf("(%d, %d)", x+xc, y+yc);
 		printf("(%d, %d)", x+xc, -y+yc);
 		printf("(%d, %d)", y+xc, -x+yc);
@@ -46,6 +43,7 @@ void bresenham_circle()
 		printf("(%d, %d)", -y+xc, x+yc);
 		printf("(%d, %d)", y+xc, x+yc);
 		printf("\n");
+
 		glBegin(GL_POINTS);
 		glVertex2i(x+xc, y+yc);
 		glVertex2i(x+xc, -y+yc);
@@ -55,7 +53,10 @@ void bresenham_circle()
 		glVertex2i(-x+xc, y+yc);
 		glVertex2i(-y+xc, x+yc);
 		glVertex2i(y+xc, x+yc);
-		
+		glEnd();
+		glFlush();
+
+
 		if (p < 0) 
 			p += (4*x) + 6;
 		else
@@ -65,11 +66,6 @@ void bresenham_circle()
 			y--;
 		}
 		x++;
-		
-		glEnd();
-		glFlush();
-		
-
 	}
 
 }

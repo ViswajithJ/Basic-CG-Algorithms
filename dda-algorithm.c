@@ -2,10 +2,6 @@
 
 DDA LINE DRAWING ALGORITHM IMPLEMENTATION
 
-Viswajith J.
-Roll no. 60
-S6 CSE
-
 */
 
 #include <stdio.h>
@@ -53,16 +49,13 @@ void dda()
 	{	
 		glBegin(GL_POINTS);
 		glVertex2i(round(x1),round(y1));
+		glEnd();
+		glFlush();
 		
 		printf("(%.0f, %.0f)\n", round(x1), round(y1));
 
 		x1 = x1 + x_inc;
 		y1 = y1 + y_inc;
-		
-		glEnd();
-		glFlush();
-		
-
 	}
 }
 

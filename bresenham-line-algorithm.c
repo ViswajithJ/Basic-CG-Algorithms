@@ -2,10 +2,6 @@
 
 BRESENHAM'S LINE DRAWING ALGORITHM IMPLEMENTATION
 
-Viswajith J.
-Roll no. 60
-S6 CSE
-
 */
 
 #include <stdio.h>
@@ -35,14 +31,16 @@ void bresenham_line()
 	dx = x2 - x1;
 	dy = y2 - y1;
 
-	p = 2*dy - dx;
+	p = 2*dy - dx; //decision parameter (initial value)
 	
 	while(x1 <= x2)
 	{	
 		printf("(%d, %d)\n", x1, y1);
 		glBegin(GL_POINTS);
 		glVertex2i(x1, y1);
-		
+		glEnd();
+		glFlush();
+
 		x1++;
 
 		if (p < 0) 
@@ -52,12 +50,6 @@ void bresenham_line()
 			y1++;
 			p += 2*dy - 2*dx;
 		}
-
-		
-		glEnd();
-		glFlush();
-		
-
 	}
 	
 }

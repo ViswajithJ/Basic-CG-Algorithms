@@ -2,10 +2,6 @@
 
 MIDPOINT CIRCLE DRAWING ALGORITHM IMPLEMENTATION
 
-Viswajith J.
-Roll no. 60
-S6 CSE
-
 */
 
 #include <stdio.h>
@@ -31,12 +27,10 @@ void midpoint_circle()
 
 	x = 0;
 	y = radius;
-	p = 1 - radius;
+	p = 1 - radius;    //decision parameter (initial value)
 
 	while(x<y)
 	{	
-
-		
 		printf("(%d, %d)", x+xc, y+yc);
 		printf("(%d, %d)", x+xc, -y+yc);
 		printf("(%d, %d)", y+xc, -x+yc);
@@ -55,7 +49,8 @@ void midpoint_circle()
 		glVertex2i(-x+xc, y+yc);
 		glVertex2i(-y+xc, x+yc);
 		glVertex2i(y+xc, x+yc);
-		
+		glEnd();
+		glFlush();
 
 		if (p < 0) 
 			p += (2*x) + 3;
@@ -66,11 +61,6 @@ void midpoint_circle()
 			y--;
 		}
 		x++;
-		
-		glEnd();
-		glFlush();
-		
-
 	}
 	
 }
